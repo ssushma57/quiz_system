@@ -7,7 +7,7 @@ The application enables users to take a quiz and results are displayed at the en
 All the code required to run this project is available in this Git repository. You can either download it as a zip file from Github or run:
 
 ```bash
-$ git clone https://github.com/ssushma57/quiz
+$ git clone https://github.com/ssushma57/quiz_system
 ```
 
 ### Environment
