@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head  th:replace="fragments/head :: headerFragment">
+</head>
+<body ng-app="playQuizApp">
+
+	<div th:replace="fragments/header :: header">...</div>
+	
+	<div class="container">
+	
+<!--		<div class="col-sm-2"></div> -->
+		
+		<div class="col-sm-8" ng-controller="PlayQuizCtrl">
+		
+			<div ng-show="playing">
+				<h2 class="form-signin-heading">{{currentQuestion.question}}</h2>
+				<hr/>	
+				
+				<div class="form-group">
+		        	<div ng-repeat="answer in currentAnswers"> 
+		        		<div class="radio">
+		        			<input type="radio" ng-model="$parent.answerChoices" ng-value="{{answer.id}}" name="answerChoices">{{answer.answer}}</input>
+		        		</div>
+					</div>
+					<button th:text="Submit" class="btn btn-lg btn-primary btn-block" type="submit" ng-click="answerQuestion(answerChoices)"></button>
+		        </div>
+			</div>
+			
+			<div ng-hide="playing">
+				<h2 th:text="Result" class="form-signin-heading text-center">...</h2>
+				<hr/>	
+				<h1 class="text-center">Final Score: {{ results }}</h1>
+			</div>
+			
+		</div>
+		
+		<div class="col-sm-2"></div>
+	</div>
+	 
+	<div th:replace="fragments/angular :: angular"></div>
+	<script type="text/javascript" src="../js/playApp.js"
+		        th:src="@{/js/playApp.js}"></script>
+</body>
+</html>

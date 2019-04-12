@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head  th:replace="fragments/head :: headerFragment">
+</head>
+<body ng-app="homeApp">
+
+	<div th:replace="fragments/header :: header">...</div>
+
+	<div class="container">
+
+		<div ng-controller="HomeCtrl">
+			</div>
+	
+	<div th:replace="fragments/angular :: angular">...</div>
+	<script type="text/javascript" src="../js/homeApp.js"
+		        th:src="@{/js/homeApp.js}"></script>
+		        
+</body>
+</html>
